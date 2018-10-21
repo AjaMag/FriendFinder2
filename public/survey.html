@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Page</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+          <h1 class="text-center"><span class="fa fa-friends"></span>Begin Survey</h1>
+          <hr>
+          <h2 class="text-center">Enter Your Info and Answer Questions Below</h2>
+          <br>
+          <h3><strong>Question 1</strong></h3>
+          <h4>Your emotional well-being is a top priority in your life</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 2</strong></h3>
+          <h4>You enjoy being the main center of attention at social gatherings</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 3</strong></h3>
+          <h4>Wealth and money are good, but not necessary for your happiness</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 4</strong></h3>
+          <h4>You constantly seek out new things to learn and do</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+
+          <h3><strong>Question 5</strong></h3>
+          <h4>You have a very close relationship with your family, and spend lots of time together</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 6</strong></h3>
+          <h4>You are an introvert and go out of your way to avoid new people</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 7</strong></h3>
+          <h4>You prefer to eat out at restaurants, instead of cook</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 8</strong></h3>
+          <h4>You consider yourself to be very active and enjoy lots of exercise</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 9</strong></h3>
+          <h4>You know a TON about your corner of the world, but not too much outside of that</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <h3><strong>Question 10</strong></h3>
+          <h4>You consider yourself to be spiritual or religious, and highly value your Higher Power</h4>
+          <select class="form-control">
+            <option>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <div class="text-center">
+          <button id="submit" class="btn btn-lg btn-info">Submit Response</button>
+          </div>
+          <div class="text-center">
+            <a href="/index"><button class="btn btn-md btn-danger"><span class="fa fa-credit-card"></span>Back to Home</button></a>
+        
+        </div>
+    
+        <div class="row">
+          <div class="col-lg-12">
+    
+    
+        <footer class="footer mt-4">
+          <div class="container">
+            <p><a href="#" id="clear">Clear Form</a> | <a href="/api/peopleMatch">People Link</a> | <a href="/api/github">GitHub
+                Repo</a>
+          </div>
+        </footer>
+    
+      </div>
+
+<script>
+  $(".submit").on("click", function(event) {
+        event.preventDefault();
+    
+        // Here we grab the form elements
+        var newReservation = {
+          customerName: $("#reserve-name").val().trim(),
+          phoneNumber: $("#reserve-phone").val().trim(),
+          customerEmail: $("#reserve-email").val().trim(),
+          customerID: $("#reserve-unique-id").val().trim()
+        };
+    
+        console.log(newReservation);
+</script>      
+  
+</body>
+</html>
