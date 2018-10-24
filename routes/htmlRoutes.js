@@ -2,14 +2,22 @@
 var path = require("path");
 
 module.exports = function(app) {
-  // Below code handles when users "visit" a page.
-  // In each of the below cases the user is shown an HTML page of content
+  //These routes are for the html on each page, 
+  //so user can navigate between pages
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
   });
 
-  // If no matching route is found default to home
-  app.get("*", function(req, res) {
+  app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
+  });  
+
+  app.get("/peopleMatch", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/peopleMatch.html"));
   });
-};
+}
+  // If no matching route is found default to home
+//   app.get("*", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public/index.html"));
+//   });
+// };

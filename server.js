@@ -14,13 +14,13 @@ app.use(express.json());
 // ROUTES for data to travel when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/apiRoutes.js")(app);
+require("./routes/htmlRoutes.js")(app);
 
 // =============================================================================
 // LISTENER to effectively "start" our server
 // =============================================================================
 
 app.listen(PORT, function() {
-  console.log("http://localhost:5000");
+  console.log("http://localhost:" + PORT);
 });
