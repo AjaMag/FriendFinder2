@@ -13,8 +13,16 @@ module.exports = function(app) {
   // Below are the routes when users input data and get their data returned on a page
 
   app.post("/survey", function(req, res) {
-    res.json(userData);
+    let survey = req.body
+    // req.json();
+    userArray.push(survey)
+    console.log(survey)
 })
+
+//   app.get("/survey", function(req, res) {
+//   res.json(userData);
+// });
+
   app.get("/userData", function(req, res) {
     res.json(userData);
   });

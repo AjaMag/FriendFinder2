@@ -10,7 +10,7 @@
 </head>
 <body>
 <!-- This is the Modal for User Friend Match -->  
-    <div id="fModal" class="modal" tabindex="1" role="dialog">
+    <div id="fModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -53,7 +53,7 @@
         <br>
           <h3><strong>Question 1</strong></h3>
           <h4>Your emotional well-being is a top priority in your life</h4>
-          <select id='1' class="form-control">
+          <select id='one' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -64,7 +64,7 @@
           <br>
           <h3><strong>Question 2</strong></h3>
           <h4>You enjoy being the main center of attention at social gatherings</h4>
-          <select id='2' class="form-control">
+          <select id='two' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -73,9 +73,9 @@
             <option value="5">5 (Strongly Agree)</option>
           </select>
           <br>
-          <h3><strong>Question 3</strong></h3>
+          <!-- <h3><strong>Question 3</strong></h3>
           <h4>Wealth and money are good, but not necessary for your happiness</h4>
-          <select id='3' class="form-control">
+          <select id='three' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -86,7 +86,7 @@
           <br>
           <h3><strong>Question 4</strong></h3>
           <h4>You constantly seek out new things to learn and do</h4>
-          <select id='4' class="form-control">
+          <select id='four' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -97,7 +97,7 @@
 
           <h3><strong>Question 5</strong></h3>
           <h4>You have a very close relationship with your family, and spend lots of time together</h4>
-          <select id='5' class="form-control">
+          <select id='five' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -108,7 +108,7 @@
           <br>
           <h3><strong>Question 6</strong></h3>
           <h4>You are an introvert and go out of your way to avoid new people</h4>
-          <select id='6' class="form-control">
+          <select id='six' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -119,7 +119,7 @@
           <br>
           <h3><strong>Question 7</strong></h3>
           <h4>You prefer to eat out at restaurants, instead of cook</h4>
-          <select id='7' class="form-control">
+          <select id='seven' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -130,7 +130,7 @@
           <br>
           <h3><strong>Question 8</strong></h3>
           <h4>You consider yourself to be very active and enjoy lots of exercise</h4>
-          <select id='8' class="form-control">
+          <select id='eight' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -141,7 +141,7 @@
           <br>
           <h3><strong>Question 9</strong></h3>
           <h4>You know a TON about your corner of the world, but not too much outside of that</h4>
-          <select id='9' class="form-control">
+          <select id='nine' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -152,14 +152,14 @@
           <br>
           <h3><strong>Question 10</strong></h3>
           <h4>You consider yourself to be spiritual or religious, and highly value your Higher Power</h4>
-          <select id='10' class="form-control">
+          <select id='ten' class="form-control">
             <option>Select an Option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
-          </select>
+          </select> -->
           <br>
           <div class="text-center">
           <button id="submit" class="btn btn-lg btn-info">Submit Response</button>
@@ -196,22 +196,31 @@ $ ("# DdlViewBy") .val (); // The value of the selected option -->
 <script type="text/javascript">
   $("#submit").on("click", function(event) {
         event.preventDefault();
-        // Here we grab the form elements
-        var newUser = {
-          name: $("#name").val().trim(),
-          photo: $("#photo").val().trim(),
-          scores: [$("#1").val(), $("#2").val(), $("#3").val(),
-          $("#4").val(), $("#5").val(), $("#6").val(),
-          $("#7").val(), $("#8").val(), $("#9").val(),
-          $("#10").val()
+        fetch("/survey", {
+        method: "POST", 
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify({
+          name: document.querySelector("#name").value,
+          photo: document.querySelector("#photo").value,
+          scores: [document.querySelector("#one").value, 
+          document.querySelector("#two").value, 
+          // document.querySelector("#three").value,
+          // document.querySelector("#four").value, 
+          // document.querySelector("#five").value, 
+          // document.querySelector("#six").value,
+          // document.querySelector("#seven").value, 
+          // document.querySelector("#eight").value, 
+          // document.querySelector("#nine").value,
+          // document.querySelector("#ten").value
           ]
-        };
-        $.post("/survey", newUser)
-        .then(function(data) {
-            console.log(data)
-        })
-        .catch(e => console.error(e))
+        }),
+    })
+    .then(response => response.json()) // parses response to JSON
+    .catch(e => console.error(e))
   })      
+
 </script>    
  
 </body>
