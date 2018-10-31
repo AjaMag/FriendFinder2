@@ -38,9 +38,6 @@ var friendArray = [
 
   ];
 
-  var userArray = [
-    
-  ]
   
   // Export the array to make it accessible to other files by using 'require'.
   module.exports = friendArray;
