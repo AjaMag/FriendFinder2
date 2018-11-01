@@ -15,8 +15,9 @@ module.exports = function(app) {
   app.post("/survey", function(req, res) {
     let survey = req.body
     // console.log(survey)
-    friendFunc.matchFriend(survey)
-    res.sendStatus(200)
+    let matchF = friendFunc.matchFriend(survey)
+    res.send(matchF)
+    console.log(matchF)
 })
 
 //   app.get("/survey", function(req, res) {

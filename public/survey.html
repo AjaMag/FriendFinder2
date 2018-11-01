@@ -217,9 +217,12 @@ $ ("# DdlViewBy") .val (); // The value of the selected option -->
           ]
         }),
     })
+    .then(res => res.json())
     .then(response => {
-      console.log(response)
-      getMatch()
+      const { name, photo } = response;
+      console.log(name)
+      console.log(photo)
+      // getMatch()
     }) 
     .catch(e => console.error(e))
   })      

@@ -7,7 +7,7 @@ module.exports = {
         userArray.push(survey)
         console.log(userArray)
         var userScores = survey.scores;
-    
+        let out = {};
         // Compute best friend match
             var matchName = '';
             var matchImg = '';
@@ -30,6 +30,7 @@ module.exports = {
                     console.log('Match found via score diff: ' + diff);
                     console.log('Match name = ' + friendArray[i].name);
                     console.log('Match image = ' + friendArray[i].photo);
+                    out = {name: friendArray[i].name, photo: friendArray[i].photo}
     
                     randDiff = diff;
                     matchName = friendArray[i].name;
@@ -37,8 +38,8 @@ module.exports = {
                 }
     
     }
-    
+    return out;
     }
-    
-
 }
+
+//userArray
