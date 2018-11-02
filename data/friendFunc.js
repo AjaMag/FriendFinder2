@@ -7,8 +7,10 @@ module.exports = {
     matchFriend(survey) {
         // req.json();
         userArray.push(survey)
-        console.log(userArray)
+        // console.log(userArray)
         var userScores = survey.scores;
+        // console.log(userScores)
+        // console.log(friendArray)
         let out = {};
         // Compute best friend match
             var matchName = '';
@@ -29,9 +31,9 @@ module.exports = {
           // console.log(userArray)
           //If lowest difference, record the friend match
                 if (diff < randDiff) {
-                    console.log('Match found via score diff: ' + diff);
-                    console.log('Match name = ' + friendArray[i].name);
-                    console.log('Match image = ' + friendArray[i].photo);
+                    // console.log('Match found via score diff: ' + diff);
+                    // console.log('Match name = ' + friendArray[i].name);
+                    // console.log('Match image = ' + friendArray[i].photo);
                     out = {name: friendArray[i].name, photo: friendArray[i].photo}
     
                     randDiff = diff;
@@ -40,6 +42,7 @@ module.exports = {
                 }
     
     }
-    return out;
+    // return out;
+    console.log(out)
     }
 }

@@ -12,12 +12,12 @@ module.exports = function(app) {
   // API GET and POST Requests
   // Below are the routes when users input data and get their data returned on a page
 
-  app.post("/survey", function(req, res) {
+  app.post("/api/survey", function(req, res) {
     let survey = req.body
     // console.log(survey)
     let matchF = friendFunc.matchFriend(survey)
-    res.send(matchF)
-    console.log(matchF)
+    res.json(matchF)
+    // console.log(matchF)
 })
 
   app.post("/friendMatch", function(req, res) {
