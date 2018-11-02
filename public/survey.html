@@ -222,15 +222,15 @@ $ ("# DdlViewBy") .val (); // The value of the selected option -->
       const { name, photo } = response;
       console.log(name)
       console.log(photo)
-      // getMatch()
+      getMatch()
     }) 
     .catch(e => console.error(e))
   })      
 
 function getMatch() {
-  fetch("/friendFunc", 
+  fetch("/friendMatch", 
     $('#fModal').modal('show')
-
+    
   )
   
 }

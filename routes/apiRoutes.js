@@ -20,9 +20,10 @@ module.exports = function(app) {
     console.log(matchF)
 })
 
-//   app.get("/survey", function(req, res) {
-//   res.json(userData);
-// });
+  app.post("/friendMatch", function(req, res) {
+    var match = req.body
+  ;
+});
 
   // app.get("/userData", function(req, res) {
   //   res.json(friendArray);
