@@ -1,6 +1,8 @@
 var friendArray = require("./friendData");
 var userArray = require("./userData");
 
+//the below function will find the user a friend Match!
+
 module.exports = {
     matchFriend(survey) {
         // req.json();
@@ -41,5 +43,3 @@ module.exports = {
     return out;
     }
 }
-
-//userArray

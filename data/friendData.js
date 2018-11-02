@@ -1,7 +1,5 @@
 // DATA
-// Below data will hold all of the reserved tables.
-// Initially we just set it equal to a "dummy" customer.
-
+// Below array will hold all of the data for possible friend matches
 var friendArray = [
     {
       name: "Kanye West",
@@ -22,7 +20,7 @@ var friendArray = [
     
     {
       name: "Aja Magdaleno",
-      photo: "https://pics.clipartpng.com/midle/Brown_Bear_PNG_Clipart-669.png",
+      photo: "https://pics.clipartpng.com/Brown_Bear_PNG_Clipart-669.png",
       scores: [ '2', '3'
       // , '2', '5', '1', '1', '5', '4', '5', '5'
               ]

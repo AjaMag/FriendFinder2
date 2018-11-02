@@ -1,7 +1,5 @@
 // DATA
-// Below data will hold all of the reserved tables.
-// Initially we just set it equal to a "dummy" customer.
-
+// Below array will hold all of the user input info and survey.
   var userArray = [
     
   ]
